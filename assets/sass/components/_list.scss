@@ -6,6 +6,7 @@
 
 /* List */
 
+//noinspection CssInvalidPropertyValue
 ol {
   list-style: decimal;
   margin: 0 0 _size(element-margin) 0;
@@ -16,6 +17,7 @@ ol {
   }
 }
 
+//noinspection CssInvalidPropertyValue
 ul {
   list-style: disc;
   margin: 0 0 _size(element-margin) 0;
@@ -41,6 +43,7 @@ ul {
   }
 }
 
+//noinspection CssInvalidPropertyValue
 dl {
   margin: 0 0 _size(element-margin) 0;
 

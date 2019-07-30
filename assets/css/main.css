@@ -20,7 +20,6 @@ section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
   vertical-align: baseline;
 }
@@ -42,7 +41,6 @@ blockquote, q {
   quotes: none;
 }
 blockquote:before, blockquote:after, q:before, q:after {
-  content: "";
   content: none;
 }
 
@@ -125,7 +123,7 @@ html {
 
 body, input, select, textarea {
   color: #ffffff;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Source Sans Pro", sans-serif, sans-serif;
   font-weight: 300;
   font-size: 1rem;
   line-height: 1.65;
@@ -240,7 +238,7 @@ blockquote {
 code {
   background: rgba(255, 255, 255, 0.075);
   border-radius: 4px;
-  font-family: "Courier New", monospace;
+  font-family: "Courier New", monospace, monospace;
   font-size: 0.9rem;
   margin: 0 0.25rem;
   padding: 0.25rem 0.65rem;
@@ -248,7 +246,7 @@ code {
 
 pre {
   -webkit-overflow-scrolling: touch;
-  font-family: "Courier New", monospace;
+  font-family: "Courier New", monospace, monospace;
   font-size: 0.9rem;
   margin: 0 0 2rem 0;
 }
@@ -462,7 +460,7 @@ input[type=radio] + label:before {
   text-rendering: auto;
   line-height: 1;
   text-transform: none !important;
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Free", sans-serif;
   font-weight: 900;
 }
 input[type=checkbox] + label:before,
@@ -563,7 +561,7 @@ input[type=radio] + label:before {
   text-rendering: auto;
   line-height: 1;
   text-transform: none !important;
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Free", sans-serif;
 }
 .icon > .label {
   display: none;
@@ -575,7 +573,7 @@ input[type=radio] + label:before {
   font-weight: 900;
 }
 .icon.brands:before {
-  font-family: "Font Awesome 5 Brands";
+  font-family: "Font Awesome 5 Brands", sans-serif;
 }
 
 /* Image */
@@ -587,7 +585,7 @@ input[type=radio] + label:before {
 }
 .image:before {
   pointer-events: none;
-  background-image: url("../../images/overlay.png");
+  background-image: url("/images/overlay.png");
   background-color: rgba(19, 21, 25, 0.5);
   border-radius: 4px;
   content: "";
@@ -1008,7 +1006,7 @@ button {
   -webkit-transition-delay: 0.75s;
   -ms-transition-delay: 0.75s;
   transition-delay: 0.75s;
-  background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
+  background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("/images/overlay.png");
   background-size: auto, 256px 256px;
   background-position: center, center;
   background-repeat: no-repeat, repeat;
@@ -1023,7 +1021,7 @@ button {
   -webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
   -ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
   transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-  background-image: url("../../images/bg.jpg");
+  background-image: url("/images/bg.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

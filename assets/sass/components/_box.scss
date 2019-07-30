@@ -6,6 +6,7 @@
 
 /* Box */
 
+//noinspection CssInvalidPropertyValue
 .box {
   border-radius: _size(border-radius);
   border: solid _size(border-width) _palette(border);

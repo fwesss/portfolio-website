@@ -8,6 +8,7 @@
 
 // MSIE: Required for IEMobile.
 @-ms-viewport {
+  //noinspection CssInvalidPropertyValue
   width: device-width;
 }
 
@@ -29,6 +30,7 @@ html {
 }
 
 body {
+  //noinspection CssInvalidPropertyValue
   background: _palette(bg);
 
   // Stops initial animations until page loads.
