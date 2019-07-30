@@ -6,7 +6,7 @@
 
 (function ($) {
 
-    var $window = $(window),
+    let $window = $(window),
         $body = $('body'),
         $wrapper = $('#wrapper'),
         $header = $('#header'),
@@ -32,9 +32,9 @@
     });
 
     // Fix: Flexbox min-height bug on IE.
-    if (browser.name == 'ie') {
+    if (browser.name === 'ie') {
 
-        var flexboxFixTimeoutId;
+        let flexboxFixTimeoutId;
 
         $window.on('resize.flexbox-fix', function () {
 
@@ -54,11 +54,11 @@
     }
 
     // Nav.
-    var $nav = $header.children('nav'),
+    let $nav = $header.children('nav'),
         $nav_li = $nav.find('li');
 
     // Add "middle" alignment classes if we're dealing with an even number of items.
-    if ($nav_li.length % 2 == 0) {
+    if ($nav_li.length % 2 === 0) {
 
         $nav.addClass('use-middle');
         $nav_li.eq(($nav_li.length / 2)).addClass('is-middle');
@@ -66,7 +66,7 @@
     }
 
     // Main.
-    var delay = 325,
+    let delay = 325,
         locked = false;
 
     // Methods.
@@ -75,7 +75,7 @@
         var $article = $main_articles.filter('#' + id);
 
         // No such article? Bail.
-        if ($article.length == 0)
+        if ($article.length === 0)
             return;
 
         // Handle lock.
@@ -122,7 +122,7 @@
         if ($body.hasClass('is-article-visible')) {
 
             // Deactivate current article.
-            var $currentArticle = $main_articles.filter('.active');
+            let $currentArticle = $main_articles.filter('.active');
 
             $currentArticle.removeClass('active');
 
@@ -199,7 +199,7 @@
 
     $main._hide = function (addState) {
 
-        var $article = $main_articles.filter('.active');
+        let $article = $main_articles.filter('.active');
 
         // Article not visible? Bail.
         if (!$body.hasClass('is-article-visible'))
@@ -289,7 +289,7 @@
     // Articles.
     $main_articles.each(function () {
 
-        var $this = $(this);
+        let $this = $(this);
 
         // Close.
         $('<div class="close">Close</div>')
@@ -316,19 +316,10 @@
 
     $window.on('keyup', function (event) {
 
-        switch (event.keyCode) {
-
-            case 27:
-
-                // Article visible? Hide.
-                if ($body.hasClass('is-article-visible'))
-                    $main._hide(true);
-
-                break;
-
-            default:
-                break;
-
+        if (event.keyCode === 27) {
+            if ($body.hasClass('is-article-visible'))
+                $main._hide(true);
+        } else {
         }
 
     });
@@ -336,8 +327,8 @@
     $window.on('hashchange', function (event) {
 
         // Empty hash?
-        if (location.hash == ''
-            || location.hash == '#') {
+        if (location.hash === ''
+            || location.hash === '#') {
 
             // Prevent default.
             event.preventDefault();
@@ -368,7 +359,7 @@
         history.scrollRestoration = 'manual';
     else {
 
-        var oldScrollPos = 0,
+        let oldScrollPos = 0,
             scrollPos = 0,
             $htmlbody = $('html,body');
 
@@ -392,8 +383,8 @@
     $main_articles.hide();
 
     // Initial article.
-    if (location.hash != ''
-        && location.hash != '#')
+    if (location.hash !== ''
+        && location.hash !== '#')
         $window.on('load', function () {
             $main._show(location.hash.substr(1), true);
         });
