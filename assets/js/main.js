@@ -31,6 +31,7 @@
         }, 100);
     });
 
+
     // Fix: Flexbox min-height bug on IE.
     if (browser.name === 'ie') {
 
@@ -72,7 +73,7 @@
     // Methods.
     $main._show = function (id, initial) {
 
-        var $article = $main_articles.filter('#' + id);
+        let $article = $main_articles.filter('#' + id);
 
         // No such article? Bail.
         if ($article.length === 0)
@@ -173,6 +174,14 @@
                 // Show main, article.
                 $main.show();
                 $article.show();
+
+                const lazyImages = document.querySelectorAll("img.lazy");
+                lazyImages.forEach(function (img) {
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    img.attributes.removeNamedItem('data-src');
+                });
+
 
                 // Activate article.
                 setTimeout(function () {
